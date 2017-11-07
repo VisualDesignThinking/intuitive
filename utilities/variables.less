@@ -1,0 +1,116 @@
+/* intuitive Framework LESS Edition*/
+/* Draft V: 1.00 */
+/* Author: Jeetendra Pal */
+
+// Variables
+
+//default breakpoints
+@xl-break:            1675px;
+@l-break:             1300px;
+@m-break:             985px;
+@s-break:             650px;
+
+.font-size(@sizeValue) {
+  @emValue: (@sizeValue * 16);
+  font-size: ~"@{emValue}px";
+}
+@base-font: 100%;
+@spacing: 1.0em;
+
+@default-border:@spacing/12 solid lighten(@black, 80%);
+@default-border-hover:@spacing/12 solid lighten(@black, 70%);
+@default-border-focus:@spacing/12 solid lighten(@black, 50%);
+
+@default-border-color: lighten(@black, 80%);
+@default-border-color-hover: lighten(@black, 70%);
+
+@ui-tool-kit:lighten(@black, 90%);
+@ui-tool-kit-hover:lighten(@black, 85%);
+
+@default-text-color: lighten(@text , 35%);
+@default-text-color-hover: lighten(@text , 20%);
+@default-text-color-disabled: lighten(@text , 50%);
+
+@default-link-color:@amethyst;
+@default-link-color-hover:darken(@amethyst, 20%);
+
+.form-spacing{
+	padding: @spacing;
+}
+.box-sizing{
+	-webkit-box-sizing: 	border-box;
+	-moz-box-sizing:     	border-box;
+	box-sizing:          	border-box;
+}
+.list-unstyled{
+	list-style:	none;
+	padding: 	0px;
+	margin: 	0px;
+}
+.unselectable {
+	-webkit-user-drag:		none;
+	-webkit-user-select: 	none;
+	-moz-user-select: 		none;
+	-ms-user-select: 		none;
+	user-select: 			none;
+}
+
+//base colors
+@white 			    : #ffffff; // white
+@black 			    : #0b0b0b; // black
+@black-haze 	  : #F8F8F8; // light gray
+@kashmir-blue 	: #446F8F; // slate blue
+@amethyst 		  : #01579B; // primary 
+@stardust 	  	: #757575; // default
+@curious-blue 	: #00838F; // info
+@pistachio  		: #7DB62B; // success
+@coral-red 	  	: #ff4444; // danger
+@sunglow 		    : #FFAB00; // warning
+@orange         : #f68b39; // accent;
+
+// 2. Primary colors
+
+@primary        : @amethyst;
+@accent         : @orange;
+@info           : @curious-blue;
+@success        : @pistachio;
+@warning        : @sunglow;
+@danger         : @coral-red;
+@light          : @black-haze;
+@dark           : @stardust;
+@text           : @black;
+
+// Font Size Defaults
+@h1: 42;
+@h2: 34;
+@h3: 28;
+@h4: 22;
+@h5: 18;
+@h6: 15;
+
+@default-font-size:   15px;
+@default-line-height: 24;
+
+// Margin mixin - enter pixel values in order: padding-top, padding-right, padding-bottom, padding-left
+// Usage: .margin(5, 10, 5, 10);
+.margin(@mt: 0; @mr: 0; @mb: 0; @ml: 0;) { 
+  @mtv: @mt / @spacing;
+  @mrv: @mr / @spacing;
+  @mbv: @mb / @spacing;
+  @mlv: @ml / @spacing;
+  margin: ~"@{mt}px" ~"@{mr}px" ~"@{mb}px" ~"@{ml}px";
+  margin: ~"@{mtv}rem" ~"@{mrv}rem" ~"@{mbv}rem" ~"@{mlv}rem";
+}
+
+// Padding mixin - enter pixel values in order: padding-top, padding-right, padding-bottom, padding-left
+// Usage: .padding(5, 10, 5, 10);
+.padding(@pt: 0; @pr: 0; @pb: 0; @pl: 0;) { 
+  @ptv: @pt / @spacing;
+  @prv: @pr / @spacing;
+  @pbv: @pb / @spacing;
+  @plv: @pl / @spacing;
+  padding: ~"@{pt}px" ~"@{pr}px" ~"@{pb}px" ~"@{pl}px";
+  padding: ~"@{ptv}rem" ~"@{prv}rem" ~"@{pbv}rem" ~"@{plv}rem";
+}
+
+// END ALL

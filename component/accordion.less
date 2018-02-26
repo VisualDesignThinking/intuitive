@@ -1,0 +1,55 @@
+/* Intuitive Framework */
+/* Draft V 1.0 */
+// accordion
+
+.accordion {
+  margin: 0;
+  border-top: @default-border;
+  list-style: none;
+  padding: 0;
+}
+
+.accordion li {
+  border-bottom: @default-border;
+  position: relative;
+}
+
+.accordion li .box-content {
+  display: none;
+  padding: @spacing;
+}
+
+.accordion .box-title {
+  font-weight: 700;
+  display: block;
+  cursor: pointer;
+  user-select: none;
+  padding: @spacing;
+}
+
+.accordion .box-title:after {
+  width: 8px;
+  height: 8px;
+  border-right: 1px solid @default-border-color-hover;
+  border-bottom: 1px solid @default-border-color-hover;
+  position: absolute;
+  right: 10px;
+  content: " ";
+  top: 17px;
+  .rotate (-45deg);
+  .transition (all 0.2s ease-in-out);
+}
+
+.accordion .box-content {
+  padding: @spacing;
+}
+
+.box-title.active:after {
+  .rotate (45deg);
+  .transition ( all 0.2s ease-in-out);
+}
+
+.accordion .box-title.active {
+  background: @ui-tool-kit;
+}
+// END ALL

@@ -1,0 +1,61 @@
+/* Intuitive Framework */
+/* Draft V 1.0 */
+// button group
+
+.btn-group{
+display: inline-flex;
+	.btn{
+	//flex:1;
+	
+	}
+	.dropdown-toggle{}
+	.dropdown-toggle{
+	
+		.icon{
+		//flex:1;
+		display: inline-flex;
+		justify-content: flex-end;
+		}
+	}
+}
+
+.btn-toolbar{}
+
+//Vertical button groups
+.btn-group-vertical{
+	//position: relative;
+	display:inline-flex;
+	flex-direction: column;
+	.btn{
+		border-bottom:0;
+			&:last-child{
+			border-bottom:@default-border;
+			}
+		}
+	.btn-group{
+		.btn{
+		border-bottom:0;
+			&:last-child{
+			border-bottom:@default-border;
+			}
+			
+		}
+		
+	}
+}
+//Justified button groups
+.btn-group-justified{
+display: flex;
+margin-bottom: @spacing;
+	.btn{
+	flex: 1;
+	}
+}
+.form-group-justified{
+	display: flex;
+	margin-bottom: @spacing;
+	.form-control{
+	flex: 1;
+	}
+}
+// END ALL

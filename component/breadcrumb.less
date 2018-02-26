@@ -1,0 +1,68 @@
+/* Intuitive Framework */
+/* Draft V 1.0 */
+// breadcrumb
+
+.breadcrumb{
+display: flex;
+flex-direction: row;
+list-style: none;
+padding:0;
+margin:0;
+overflow: hidden;
+  li{
+	//flex: 1;
+    //max-width: 20vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    //padding:5px;
+    //margin-right: 1px;
+		&:before{
+		content: "/";
+		padding:@spacing/4;
+		}
+		&:first-child:before{
+		content: " ";
+		}
+		&:hover{
+			a{
+			width: auto;
+			overflow: visible;
+			}
+		}
+    &:last-child{
+      overflow: visible;
+      a{
+        text-decoration: none;
+        pointer-events: none;
+      }
+    }
+     &:first-child{
+      overflow: visible;
+    }
+    a{
+    //flex:1;
+    //white-space: nowrap;
+    //overflow: hidden;
+    //text-overflow: ellipsis;
+    //background: #eee;
+	color: @default-text-color;	
+    }
+  }
+}
+//
+// 600 px
+@media only screen and (max-width:@screen-sm){
+  .breadcrumb{
+    li{
+     display: none;
+      &:first-child{
+       display: flex;
+      }
+      &:last-child{
+       display: block;
+      }
+    }
+  }
+}
+// END ALL

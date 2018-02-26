@@ -1,0 +1,48 @@
+/* Intuitive Framework */
+/* Draft V 1.0 */
+// banner
+
+.banner {
+align-items: stretch;
+display: flex;
+flex-direction: column;
+padding:@spacing*2 @spacing;
+justify-content: space-between;
+background: @ui-tool-kit;
+
+.title{
+color: @default-text-color;
+}
+.subtitle{
+color: @default-text-color-disabled;
+margin-top: 0;
+}
+.nav{
+li{
+    &.active{
+        a{
+        background:@text-primary ;
+        color: @primary;
+        &:hover{
+        background:@text-primary ;
+        color: @primary;
+        user-select: none; 
+        cursor: text;
+        text-decoration: none;
+        }
+        }
+    }
+
+    a{
+        color:@primary-light ;
+    &:hover{
+    background: @primary-light;
+        color:@text-primary ;
+    }
+    }
+}
+
+
+}
+}
+//END ALL

@@ -1,0 +1,103 @@
+/* Intuitive Framework */
+/* Draft V 1.0 */
+// Calender 
+.date-picker{
+
+	.dropdown-toggle{
+	position: relative;	
+	}
+}
+.open .calendar{
+	display: block;
+}
+.calendar {
+	//margin: @spacing auto;
+	position: absolute;
+	z-index: 9;
+	right: 0;
+	top: 100%;
+	display: none;
+	//min-width:200px;
+}
+.week, .date {
+	display: flex;
+	flex-direction: row;
+}
+.day {
+	flex-grow: 1;
+	flex-shrink: 1;
+	flex-basis: 0;
+	min-width: 3vw;
+	min-height: 3vh;
+}
+.week {}
+.day {
+	color: @default-text-color;
+	padding:  @spacing/2;
+	background-color: @white;
+	text-decoration: none;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	text-align: center;
+	flex:1;
+	.drop-shadow ();
+	&:hover{
+	background: @ui-tool-kit-hover;
+	}
+}
+.day.outside {
+	color: @default-text-color-disabled;
+	background: @ui-tool-kit;
+}
+.day.today {
+	font-weight: bold;
+	cursor: default;
+	pointer-events: none;
+}
+.month {
+	padding: 0;
+	margin: 0;
+	display: flex;
+	list-style: none;
+}
+.month a {
+	flex: 1;
+	padding: @spacing/2;
+	text-align: center;
+	background-color: @white;
+	.drop-shadow ();
+	&:hover{
+	background: @ui-tool-kit-hover;
+	}
+}
+.month a.curent {
+	flex: 8;
+	font-weight: bold;
+	cursor: default;
+	pointer-events: none;
+}
+.month a.prev, .month a.next {
+	flex: 2;
+	cursor: default;
+	pointer-events: none;
+}
+.month a {
+	text-decoration: none;
+	flex: 1;
+	text-align: center;
+	color: @default-text-color;
+	text-overflow: ellipsis;
+	//overflow: hidden;
+}
+.month a:first-child::before, .month a:last-child::after {
+	font-family: 'arc' !important;
+	content: '\e908';
+}
+.month a:nth-of-type(2)::before, .month a:nth-last-of-type(2)::after {
+	font-family: 'arc' !important;
+	content: '\e907';
+}
+.month a:last-child::after, .month a:nth-last-of-type(2)::after {
+	.rotate(180deg);
+}
+// END ALL

@@ -1,1 +1,107 @@
 
+/* Intuitive Framework */
+/* Draft V 1.0 */
+// .responsive-tabs
+.responsive-tabs {
+	dt{
+	padding: @spacing;
+	cursor: pointer;
+		&:hover{
+		background-color: @ui-tool-kit;
+		}
+	}
+	dt ~ dt {
+	border-top: @default-border;
+	}
+	.active {
+	//background-color: @ui-tool-kit;
+	color: @default-text-color;
+	border: @default-border;
+	border-bottom: 1px solid @white;
+		&:hover{
+		background-color:@white;
+		}
+		+ dd { 
+		display: flex;
+		flex: 1 1 100%;
+		flex-direction:column;
+		
+		}
+	}
+
+	dd {
+	display: none;
+	margin-left: 0;
+	padding: 1em;
+	}
+	img { 
+	max-width: 100%; 
+	}
+}
+
+/*---------------------------------*/
+ @media only screen and (min-width: 768px) {
+
+	.responsive-tabs {
+	display: flex;
+	flex-wrap: wrap;
+		dt {
+		flex-grow: 1;
+		border-bottom: @default-border;
+		text-align: center;
+		}
+		dt ~ dt {
+		border-top: 0;
+		}
+		dd { 
+		order: 2; 
+		}
+	}
+}
+
+
+//-Accordion-//
+.responsive-accordion { 
+border:@default-border; 
+	dt {
+	padding: 1em;
+	cursor: pointer;
+	position: relative;
+	}
+	dt ~ dt {
+	border-top:@default-border;
+	}
+	.active {
+	background-color: @ui-tool-kit;
+	color:@default-text-color;
+	}
+	dd {
+	display: none;
+	margin-left: 0;
+	padding: 1em;
+	}
+	dt:after {
+	width: 8px;
+	height: 8px;
+	border-right: 1px solid @default-border-color-hover;
+	border-bottom: 1px solid @default-border-color-hover;
+	position: absolute;
+	right: 10px;
+	content: " ";
+	top: 17px;
+	.rotate (-45deg);
+	.transition (all 0.2s ease-in-out);
+	}
+	.active:after {
+	.rotate (45deg);
+	.transition ( all 0.2s ease-in-out);
+	}
+	.active + dd { 
+	display: block; 
+	}
+	img { 
+	max-width: 100%; 
+	}
+}
+
+// END ALL

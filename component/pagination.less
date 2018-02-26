@@ -1,0 +1,151 @@
+/* Intuitive Framework */
+/* Draft V 1.0 */
+// pagination
+
+.wrapper {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	margin: @spacing auto;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+.pagination {
+	list-style: none;
+	padding:0;
+	margin:0;
+}
+.pagination, 
+.pagination li a {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+.pagination li {
+	//background-color: #eee;
+}
+.pagination a {
+	padding: @spacing/2;
+	line-height: @spacing;
+	text-decoration: none;
+	border:@default-border;
+	border-left-width: 0;
+	color: @default-text-color;
+
+}
+.pagination li:not([class*="active"]) a:hover {
+	background-color: @ui-tool-kit-hover;
+}
+.pagination li:not([class*="active"]) a:focus, 
+.pagination li:not([class*="active"]) a:active {
+
+}
+.pagination li:first-of-type a {
+	border-left-width: 1px;
+}
+
+.pagination li a.first {}
+.pagination li a.previous{}
+.pagination li a.next{}
+.pagination li a.last{}
+
+.pagination li a.next i,
+.pagination li a.last i{
+	.rotate (180deg);
+}
+
+
+.pagination li.active a {
+	color: #999;
+	background-color: rgba(255,255,255,.15);
+	//box-shadow: inset 0px 3px 2px 0px rgba(0,0,0,.35);
+	cursor: default;
+	pointer-events: none;
+}
+
+@media only screen and ( max-width: 1024px ) {
+.pagination li:first-child,  
+.pagination li:last-child {
+	/* screen readers only */
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
+}
+.pagination li:nth-of-type(2) a {
+	border-left-width: 1px;
+}
+}
+
+@media only screen and ( max-width: 640px ) {
+.pagination li {
+	/* screen readers only */
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
+}
+.pagination li.active,  
+.pagination li:first-of-type,  
+.pagination li:last-of-type,  
+.pagination li:nth-of-type(2),  
+.pagination li:nth-last-of-type(2) {
+	position: initial;
+	position: static;
+	top: initial;
+	left: initial;
+}
+.pagination li:nth-of-type(2) a {
+	border-left-width: 0;
+}
+}
+
+@media only screen and ( max-width: 480px ) {
+
+.pagination li:first-child,  
+.pagination li:last-child {
+	/* screen readers only */
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
+}
+.pagination li:nth-of-type(2) a {
+	border-left-width: 1px;
+}
+}
+
+@media only screen and ( max-width: 240px ) {  /* For watches? */
+.pagination li {
+	width: 50%;
+}
+.pagination li.active {
+	-webkit-box-ordinal-group: 3;
+	-webkit-order: 2;
+	-ms-flex-order: 2;
+	order: 2;
+	width: 100%;
+	border-left-width: 1px;
+}
+}

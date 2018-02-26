@@ -1,0 +1,60 @@
+/* Intuitive Framework */
+/* Draft V 1.0 */
+
+//Search Dropdown
+
+.search {
+  position: relative;
+  margin: 0 auto;
+
+  input {
+    &:focus {
+      outline: 0;
+      border-color: @ui-tool-kit-hover;
+
+      + .search-ac {
+        display: block;
+      }
+    }
+  }
+}
+
+.search-ac {
+  padding: 0;
+  margin: 0;
+  display: none;
+  position: absolute;
+  top: 100%-2px;
+  left: 0;
+  right: 0;
+  z-index: 9;
+  background: @white;
+  border: @default-border;
+  max-height: 250px;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  &:hover {
+    display: block;
+  }
+
+  li {
+    display: block;
+    position: relative;
+    margin: 0 -1px;
+    padding: @spacing;
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: @default-border;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+
+    &:hover {
+      background: @ui-tool-kit
+    }
+  }
+}
+
+// END ALL

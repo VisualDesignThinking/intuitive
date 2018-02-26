@@ -1,0 +1,204 @@
+/* Intuitive Framework */
+/* Draft V 1.0 */
+// navagation
+
+
+// navbar 
+.navbar {
+  display: flex;
+  background: @ui-tool-kit;
+  padding:@spacing/2 0;
+	& > * {
+	  display: flex;
+	  flex: 1;
+	}
+} //  navbar end
+ 
+// nav 
+.nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+	li {
+		a {
+		padding: @spacing;
+		display: inline-flex;
+			&:hover{
+			background: @ui-tool-kit-hover;
+			}
+		}
+	}
+} // nav end
+
+//nav-stacked
+.nav-stacked {
+flex-direction: column;
+	li {
+    flex:1;
+	flex:1 0 auto;
+		a{
+		display: flex;
+		}
+	}
+}
+
+// navbar 
+.navbar-nav {
+display: inline-flex;
+//padding: @spacing;
+//background: @ui-tool-kit;
+}
+
+.navbar-toggle {
+display: none;
+position: relative;
+padding: @spacing/2 ;
+margin:  @spacing/2;
+border:@default-border;
+}
+.navbar-collapse {
+display: flex;
+flex: 1;
+	&.collapse{
+	//display: flex;
+	}
+}
+.navbar-header {
+display: inline-flex;
+flex:0;
+//padding: @spacing;
+//background: @ui-tool-kit;
+}
+.navbar-brand {
+padding:@spacing;
+}
+.navbar-form {
+//padding:@spacing/2;
+//background: @ui-tool-kit;
+	.form-group{
+	margin-bottom:0;
+	min-width: 15vw /* - ie bug fixed -*/
+	}
+}
+.navbar-right {
+display: inline-flex;
+justify-content: flex-end;
+//background: @ui-tool-kit;
+flex: 1;
+}
+
+.navbar-left {
+display: inline-flex;
+justify-content: flex-start;
+//background: @ui-tool-kit;
+}
+// tabs
+.nav-tabs {
+border-bottom:@default-border;
+	li {
+	position: relative;
+	//margin-bottom: -2px;
+		&.active{
+			a{
+			color:@default-text-color;
+			cursor: default;
+			background-color: @white;
+			border:@default-border;
+			//border-bottom-color: transparent;
+			//border-width: 0.18em;
+			border-bottom:0;
+			position: relative;
+			top:1px;
+			}
+		}
+	}
+}
+.tab-content{
+display: flex;
+padding: @spacing;
+border: @default-border;
+border-top:0;
+/*
+-webkit-order: 1;
+order: 1;
+*/
+	.active {
+    display: flex;
+	flex-direction: column;
+	border-top:0;
+	}
+	.tab-pane {
+    display: none;
+	overflow: auto;
+	}
+}
+// pills 
+.nav-pills {
+	li {
+	position: relative;
+		&.active{
+			a{
+			background: @ui-tool-kit;
+			}
+		}
+	}
+}
+//
+
+
+// media query 
+// small 
+@media (max-width: 780px) { 
+	.navbar {
+	flex-direction: column;
+	//min-height: 17.1vh;
+	}
+	
+	.navbar{
+		& > div {
+		display: flex;
+		flex: 1;
+		margin: 0;
+		flex-direction: column;
+		}
+	}
+	.navbar-toggle{
+	display: flex;
+	}
+	.navbar-brand {
+	flex: 1 1 0%;
+	}
+
+	.navbar-header {
+	flex-direction: row-reverse;
+	}
+
+	.navbar-right {
+	justify-content: flex-start;
+	display: flex;
+	}
+	
+	.navbar-left {
+	display: flex;
+	}
+	
+	.navbar-nav{
+	display: flex;
+	flex-direction: column;
+	}
+	
+	.navbar-collapse {
+	flex-direction: column;
+	}
+	
+	.collapse {
+    display: none;
+		&.in {
+		display: flex;
+		z-index: 9;
+		}
+	}
+}
+// media query end
+// END ALL

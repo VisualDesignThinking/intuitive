@@ -1,0 +1,281 @@
+/* Intuitive Framework */
+/* Draft V 1.0 */
+// form
+
+	// Input groups
+	.input-group{
+	position: relative;
+	display: flex;
+	margin-bottom: @spacing;
+	.input-group-addon{
+	.form-spacing;
+	border: @default-border;
+	background: @ui-tool-kit;
+	}
+	.form-control{
+	flex: 1;
+	}
+	}
+	.flex-form{
+	margin: 0;
+	outline: none;
+	}
+	fieldset {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	min-width: 0;
+	}
+	legend {
+	display: flex;
+	padding: 0;
+	}
+	label {
+	display: inline-flex;
+	//font-weight: bold;
+	}
+
+	// form group
+
+	.form-group{
+	position: relative;
+	margin-bottom: @spacing;
+	display: flex;
+	margin-bottom: @spacing;
+	}
+
+	// inline form 
+	.form-inline{
+	display: inline-flex;
+	margin-bottom: @spacing;
+	}
+	.form-control {
+	font-size: 100%;
+	.form-spacing;
+	flex: 1;
+	min-width: 50px;
+	border: @default-border;
+	&:focus{
+	border: @default-border-hover;
+	}
+	}
+	// checkbox
+	.checkbox{
+	display: flex;
+	padding-left: @spacing*2;
+	margin-bottom: @spacing;
+	margin-right: @spacing/2;
+	position: relative;
+	.checkbox-inline{
+	display: inline-flex;
+	}
+	i{
+	border-color: @default-border-color;
+	}
+	input{
+	display: none;
+		&:checked{
+		
+			& + i{
+			border-color: @default-border-color-hover;
+				&:after{
+				opacity: 1;
+				color:@default-border-color-hover;
+				font-family: "arc" !important;
+				content: '\e905';
+				top: 2px;
+				left: 2px;
+				font-size: 1.1em;
+				font-style: normal;
+				}
+			}
+		}
+		& + i{
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: flex;
+		width: 22px;
+		height: 22px;
+		outline: none;
+		border-width: 2px;
+		border-style: solid;
+		background: @white;
+			&:before{}
+			&:after{
+			position: absolute;
+			opacity: 0;
+			.transition(opacity 0.1s);
+			}			
+		}
+	}
+	&:hover{
+		i{
+		border-color: @default-border-color-hover;
+		}
+	}
+	}
+	// radio
+	.radio{
+	display: flex;
+	padding-left: @spacing*2;
+	margin-bottom: @spacing;
+	margin-right: @spacing/2;
+	position: relative;
+	.radio-inline{
+	display: inline-flex;
+	}
+	i{
+	.border-radius (50%);
+	border-color: lighten(@black, 80%);
+	}
+	input{
+	display: none;
+		&:checked{
+		
+			& + i{
+			border-color: @default-border-color-hover;
+				&:after{
+				opacity: 1;
+				background: @default-border-color-hover;
+				content: '';
+				top: 5px;
+				left: 5px;
+				width: 12px;
+				height: 12px;
+				border-radius: 50%;
+				}
+			}
+		}
+		& + i{
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: flex;
+		width: 22px;
+		height: 22px;
+		outline: none;
+		border-width: 2px;
+		border-style: solid;
+		background: @white;
+			&:before{}
+			&:after{
+			position: absolute;
+			opacity: 0;
+			.transition(opacity 0.1s);
+			}
+		
+		}
+	}
+	&:hover{
+		i{
+		border-color: @default-border-color-hover;
+		}
+	}
+	} // end radio //
+	// Input type file
+	/*
+	.input-file{
+	position: relative;
+	display: flex;
+	.btn{
+	position: absolute;
+	z-index:9;
+	padding: @spacing/2.7 @spacing*2;
+	top: 3px;
+	right: 3px;
+	margin:0;
+	border:0;
+		input[type='file']{
+		display: none;
+		}
+	}
+	}  
+	*/
+	// end input-file //
+	.btn-file input[type="file"] {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100px;
+	bottom: 0;
+	height: 100%;
+	filter: alpha(opacity=0);
+	opacity: 0;
+	background: red;
+	cursor: inherit;
+	overflow: hidden;
+	}
+	.btn.btn-file{
+	position: absolute;
+	right: 0;
+	line-height: @spacing*1.2 ;
+	}
+
+	.input-group-btn {
+	position: absolute;
+	right: 0;
+	}
+
+	// custom select
+	.select-dropdown {
+	//width: 100%;
+	height: @spacing*3.5;
+	padding: 0;
+	margin: 0 auto @spacing*1.5 auto;
+	border-radius: 0;
+	border: @default-border;
+	background-color: @white;
+	position: relative;
+	cursor: pointer;
+	}
+	.select-dropdown i.icon-down {
+	display: flex;
+	position: absolute;
+	right: 20px;
+	top: 50%;
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 8px 6px 0 6px;
+	border-color: @default-text-color-hover transparent transparent transparent;
+	pointer-events: none;
+	}
+	.select-dropdown select {
+	border: none;
+	box-shadow: none;
+	background-color: transparent;
+	background-image: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	display: block;
+	width: 100%;
+	height: 100%;
+	//padding: 0 12px;
+	font-size: rem(16px);
+	line-height: rem(16px);
+	cursor: pointer;
+	}
+	.select-dropdown select:focus {
+	outline: none;
+	border: 0;
+	}
+	.select-dropdown select::-ms-expand {
+	display: none;
+	}
+	.select-dropdown option{
+	padding: @spacing;
+	}
+	.select-dropdown {
+		select.form-control{
+			option{
+			padding: @spacing;
+			}
+		}
+	}
+	// END ALL 

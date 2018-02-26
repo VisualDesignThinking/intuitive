@@ -1,0 +1,69 @@
+/* Intuitive Framework */
+/* Draft V 1.0 */
+// Treeview
+
+
+
+[data-ui-css-component="treeview"] {
+  margin: @spacing*1.5;
+  color: @default-text-color;
+
+  [type=checkbox] {
+    display: none;
+  }
+
+  ul {
+    padding: 0 0 0 @spacing*2.5;
+    display: none;
+    list-style: none;
+
+    &:first-child {
+      padding-left: 0;
+    }
+  }
+
+  li {
+    padding:@spacing/4 0;
+
+    span {
+      margin: @spacing/2 0;
+      display: list-item;
+      list-style: square;
+    }
+  }
+
+  label {
+    display: inline-block;
+    font-weight: 600;
+    transition: .2s;
+    padding-right: @spacing;
+    margin: @spacing/3 0;
+    height: @spacing*1.5;
+    line-height: @spacing*1.5;
+    cursor: pointer;
+
+    &::before {
+      display: inline-block;
+      margin-right: @spacing/3;
+      width: @spacing*1.5;
+      height:@spacing*1.5;
+      text-align: center;
+      background: @default-text-color;
+      color: @white;
+    }
+  }
+
+  [type=checkbox]:checked ~ ul,
+  ul:first-child {
+    display: block;
+  }
+
+  [type=checkbox]:checked ~ label::before {
+    content: "-";
+  }
+
+  [type=checkbox]:not(:checked) ~ label::before {
+    content: "+";
+  }
+}
+// END ALL

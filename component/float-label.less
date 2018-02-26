@@ -1,0 +1,55 @@
+/* Intuitive Framework */
+/* Draft V 1.0 */
+// Float-label
+
+.float-label {
+  .form-group {
+    position: relative;
+    margin: @spacing*2.5 0 @spacing/1.5;
+  }
+
+  .move-label {
+    position: absolute;
+    top: -20px;
+    left: 0;
+    color: @black;
+    transition: all .1s linear;
+    opacity: 0;
+    font-weight: 300;
+  }
+
+  .move-label.on {
+    color: @text;
+  }
+
+  .move-label.show {
+    top: -25px;
+    opacity: 1;
+  }
+
+  option {
+    color: @text;
+  }
+
+  .watermark {
+    color: lighten(@text, 50%);
+  }
+  //
+  .move-label-form {
+    h4 {
+      border-bottom: 1px solid lighten(@text, 50%);;
+      padding: @spacing/2 0;
+      margin-bottom: @spacing/2;
+    }
+
+    .btn-group {
+      .btn {
+        &:not(:first-child) {
+          margin-left: @spacing;
+        }
+      }
+    }
+  }
+
+}
+//End all

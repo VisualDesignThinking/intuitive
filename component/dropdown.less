@@ -1,0 +1,84 @@
+/* Intuitive Framework */
+/* Draft V 1.0 */
+// dropdown
+
+.dropdown{
+	//display:inline-flex;
+	position: relative;
+	.dropdown-toggle {
+	//flex-direction: row;
+	background: @ui-tool-kit;
+	border: @default-border;
+	cursor: pointer;
+	position: relative;
+	
+		&:hover{
+		background:@ui-tool-kit-hover;
+		text-decoration: none;
+		}
+		.icon{
+		padding-left: @spacing/2;
+		display: inline-flex;
+		}
+	}
+}// end dropdown
+
+//open dropdown
+.open, .active{
+position: relative;
+	.dropdown-menu {
+    display: flex;
+    flex-direction: column;
+	}
+}
+// dropdown menu
+	.dropdown-menu {
+	min-width:15vw;
+	.transition (all 0.2s ease-in-out);
+	.drop-shadow();
+	background: @white;
+	border: @default-border;
+	cursor: pointer;
+	overflow: visible;
+	padding: 0;
+	margin:0;
+	position: absolute;
+	z-index: 9;
+	left:0;
+	top:100%;
+	display:none;
+		/*
+		&.show-menu {
+		display: block;
+		}
+		*/
+		li {
+		border-bottom: @default-border;
+		list-style: none;
+		//padding:@spacing/2;
+			a{
+			padding:@spacing;
+			display: flex;
+				&:hover{
+				background:@ui-tool-kit-hover;
+				text-decoration: none;
+				}
+			}
+			&:hover{
+			background:@ui-tool-kit-hover;
+			text-decoration: none;
+			}
+			&:last-child{
+			border-bottom: 0;
+			}
+		}
+	}// dropdown menu end
+.dropdown{
+	.dropdown-toggle{}
+	.dropdown-menu{}
+}
+.btn{
+	&.dropdown-toggle{ }
+	.dropdown-menu{}
+}
+// END ALL

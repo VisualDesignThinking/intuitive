@@ -1,0 +1,49 @@
+/* Intuitive Framework */
+/* Draft V 1.0 */
+// panel
+
+.panel{
+display: flex;
+display: -webkit-flex;
+flex: 1 100%;
+flex-flow: column nowrap;
+border:@default-border;
+	&.panel-default{
+	border:@default-border;
+	}
+}
+.panel-body{
+//display: flex;
+//-webkit-flex: 2;
+//flex: 2;
+padding: @spacing;	
+}
+.panel-heading{
+background:@ui-tool-kit;
+border-bottom:@default-border;
+padding: @spacing;	
+}
+.panel-title{
+margin: 0;
+padding: 0;
+}
+.panel-footer{
+background:@ui-tool-kit;
+border-top:@default-border;
+padding: @spacing;	
+}
+.panel-group {
+margin-bottom: @spacing;
+	.panel{
+	margin-bottom: 0;
+		+ .panel{
+		
+		}
+	}
+}
+.collapse {
+display: none;
+	&.in{
+	display: flex;
+	}
+}
